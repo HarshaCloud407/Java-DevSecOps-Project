@@ -1,5 +1,5 @@
 # ---------- 1. Prerequisites ----------
-1. Ubuntu Servers --- 2 ( 2cpu min & Volumes are min 25GB) 
+1. Ubuntu Servers --- 2 ( 2cpu min & Volumes are min 25GB)  
 
 2. IAM Role Create With AdminFullAcess.
 
