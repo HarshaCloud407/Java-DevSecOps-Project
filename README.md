@@ -133,30 +133,6 @@ sudo docker exec nexus cat /nexus-data/admin.password
 ------------------------------------------------------------------------------------------
 # ------------ Jenkins-install- Process --------------------------------------------------
 
-# ---------- 1. Update the system ----------
-```
-sudo apt update && sudo apt upgrade -y
-```
-# ---------- 2. Install Java 21 ----------
-# Jenkins needs Java to run; fontconfig is needed for its web UI
-```
-sudo apt install -y fontconfig openjdk-21-jre
-java -version
-```
-# ---------- 3. Add the Jenkins repository ----------
-# Download Jenkins' signing key (2026) so apt can verify packages
-```
-sudo mkdir -p /etc/apt/keyrings
-sudo wget -O /etc/apt/keyrings/jenkins-keyring.asc \
-  https://pkg.jenkins.io/debian-stable/jenkins.io-2026.key
-```
-# Add the stable (LTS) Jenkins repository
-```
-echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/" | \
-  sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
-```
-# ---------- 4. Install Jenkins ----------
-
 Jenkins Installation on Ubuntu 24.04 (End to End)
 1. Update the system
 bash
