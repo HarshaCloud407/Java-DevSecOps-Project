@@ -27,11 +27,11 @@
     <distributionManagement>
         <repository>
             <id>rakesh-repo</id>
-            <url>http://54.206.109.221:8081/repository/rakesh-repo/</url>
+            <url>http://16.179.64.199:8081/repository/rakesh-repo/</url>
         </repository>
         <snapshotRepository>
             <id>rakesh-repo</id>
-            <url>http://54.206.109.221:8081/repository/rakesh-repo/</url>
+            <url>http://16.179.64.199:8081/repository/rakesh-repo/</url>
         </snapshotRepository>
     </distributionManagement>
 
