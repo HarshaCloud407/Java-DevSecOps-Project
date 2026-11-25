@@ -14,8 +14,6 @@ sudo apt install -y curl unzip wget tar gnupg apt-transport-https ca-certificate
 # ---------- 2. AWS CLI v2 ----------
 # Download, unzip, and install the AWS command-line tool
 ```
-ARCH=$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')
-echo $ARCH   # should print amd64 (or arm64)
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
@@ -35,6 +33,9 @@ aws sts get-caller-identity
 # ---------- 4. kubectl ----------
 # Download the latest stable kubectl and put it in /usr/local/bin
 ```
+ARCH=$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')
+echo $ARCH   # should print amd64 (or arm64)
+
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/${ARCH}/kubectl"
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 kubectl version --client
