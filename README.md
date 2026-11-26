@@ -2,7 +2,6 @@
 1. Ubuntu Servers --- 2 ( 2cpu min & Volumes are min 25GB)  
 
 2. IAM Role Create With AdminFullAcess.
-
 3. SecurityGroup with ALLTCP
 
 # Update the system and install the basic tools needed below
