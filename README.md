@@ -103,7 +103,7 @@ sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin d
 ```
 # Let your user run docker without sudo (takes effect after logout/login)
 ```
-sudo usermod -aG docker "${SUDO_USER:-$USER}"
+sudo usermod -aG docker ubuntu
 
 docker --version
 ```
