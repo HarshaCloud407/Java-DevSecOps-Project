@@ -44,11 +44,9 @@ kubectl version --client
 # ---------- 5. eksctl ----------
 # Download eksctl (the tool that creates EKS clusters) and install it
 ```
-PLATFORM="$(uname -s)_${ARCH}"
-curl -sLO "https://github.com/eksctl-io/eksctl/releases/latest/download/eksctl_${PLATFORM}.tar.gz"
-tar -xzf "eksctl_${PLATFORM}.tar.gz" -C /tmp && rm "eksctl_${PLATFORM}.tar.gz"
-sudo install -m 0755 /tmp/eksctl /usr/local/bin
-eksctl version
+ARCH=$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')
+curl -fsSL "https://github.com/eksctl-io/eksctl/releases/latest/download/eksctl_$(uname -s)_${ARCH}.tar.gz" | tar xz -C /tmp
+sudo mv /tmp/eksctl /usr/local/bin
 ```
 # ---------- 6. Create the cluster ----------
 # Builds a managed EKS cluster with 2-4 worker nodes (takes ~15-20 minutes)
